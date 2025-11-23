@@ -1,3 +1,7 @@
-[Ss]erver
+[Ss]erver/**/*
+![Ss]erver/carbon/
 [Ss]teamcmd
 [Cc]arbon.Startup.log
+
+!config.webpanel.json
+!config.profiler.json
