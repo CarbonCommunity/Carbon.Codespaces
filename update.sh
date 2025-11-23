@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 echo "Updating Carbon Codespaces environment..."
 
-cd ..
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install -y ca-certificates curl lib32gcc-s1
 sudo useradd -m steam || true
