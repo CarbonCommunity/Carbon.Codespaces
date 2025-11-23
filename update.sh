@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-cd Carbon
 echo "Updating Carbon Codespaces environment..."
+
+cd Carbon
 dotnet run --project Carbon.Core/Carbon.Tools/Carbon.Runner Tools/Build/runners/bootstrap.cs
 dotnet run --project Carbon.Core/Carbon.Tools/Carbon.Runner Tools/Build/runners/update.cs staging
 
@@ -11,7 +12,13 @@ sudo useradd -m steam || true
 sudo mkdir -p steamcmd
 sudo chown -r $USER:$USER steamcmd
 
-cd steamcmd
+cd Server
+carbon=https://github.com/CarbonCommunity/Carbon.Core/releases/download/edge_build/Carbon.Linux.Debug.tar.gz
+curl -sqL $carbon -o carbon.tar.gz
+tar -xvzf carbon.tar.gz
+rm carbon.tar.gz
+
+cd ../steamcmd
 steamCmd=https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
 curl -sqL $steamCmd -o steamcmd_linux.tar.gz
 tar -xvzf steamcmd_linux.tar.gz
