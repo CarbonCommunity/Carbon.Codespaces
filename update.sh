@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 echo "Updating Carbon Codespaces environment..."
 
-cd Carbon
-dotnet run --project Carbon.Core/Carbon.Tools/Carbon.Runner Tools/Build/runners/bootstrap.cs
-dotnet run --project Carbon.Core/Carbon.Tools/Carbon.Runner Tools/Build/runners/update.cs staging
-
 cd ..
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install -y ca-certificates curl lib32gcc-s1
